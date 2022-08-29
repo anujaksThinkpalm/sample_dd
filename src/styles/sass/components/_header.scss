@@ -1,0 +1,221 @@
+@use "../base" as *;
+
+.header{
+    background-color:$white ;
+    border: 1px solid $stroke;
+    box-shadow:$shadow-light;
+    padding: 1rem;
+
+    &-main{
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        .brand-logo {
+            order: 1;
+            align-self: flex-start;
+        }
+
+        .middle-wrap {
+           order: 2;    
+            @include respond(w992){
+                order: 3;
+                flex: auto;
+                margin-top: 1em;
+            }
+        }
+
+        .project-ribbon {
+            background: $sky-blue;
+            border-radius: 6px;
+            display: grid;
+            grid-template: "67px auto";
+            grid-gap: 0.4rem;
+            padding: 1rem 5rem 1rem 1rem;
+            position: relative;
+            font-size: 13px;
+            justify-content: start;
+            margin-bottom: 1em;
+
+            .thmb-md {
+                width: 42px;
+                height: 42px;
+                background: #ccc;
+                border-radius: 50%;
+                margin-right: 1rem;
+                grid-row-start: 1;
+                grid-row-end: 3;
+                align-self: center;
+            }
+
+            h4{
+                grid-column-start: 2;
+                align-self: start;
+                font-size: 14px;
+                color: $content-black;
+                font-weight: 500;
+                margin-top: 5px;
+            }
+
+            ul{
+                grid-column-start: 2;
+                display: flex;
+                justify-content: flex-start;
+                gap: 1em;
+            }
+
+            .close-ico-btn{
+                border: none;
+                position: absolute;
+                top: 12px;
+                right: 15px;
+                font-size: 1.6em;
+                color: $brand-color;
+
+            }
+           
+        }
+
+    }
+
+    &-sub{
+        height: 5rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+    }
+
+
+}
+
+
+
+
+.usermenu-item{
+    order: 2;
+    align-self: flex-start;
+    .item-set{
+        display: flex;
+        grid-auto-columns: 1rem;
+
+
+        *{
+            align-items: center;
+        }
+
+        .u-box{
+            align-items: flex-start !important;
+            .user-nme{
+                font-weight: 500;
+            }
+
+            .role{
+                font-size: 13px;
+                opacity: 0.8;
+            }
+        }
+    }
+
+
+    .dot-indicator{
+        width: 10px;
+        height: 10px;
+        background-color: $red;
+        border-radius: 50%;
+        position: absolute;
+        top: 5px;
+        right: 5px;
+    }
+}
+
+.profile-img  {
+    img{
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+    margin-right: 10px;
+}
+    
+}
+
+.sub-header {
+    padding: 1.3rem 0 0.2rem 0;
+    border-top: 1px solid #eee;
+    .item-set{
+        font-size: 1em;
+        font-weight: normal;
+        column-gap: 3%;
+        align-items: center;
+
+        li{
+          a{
+            border-radius: 20px;
+            width: 6em;
+            display: flex;
+            height: 2.125em;
+            align-items: center;
+            justify-content: center;
+
+            &:hover,&.active{
+                background-color: $brand-color;
+                color: $white;
+            }
+          }  
+        }
+    }
+}
+
+.main-nav{
+    order: 2;
+    @include respond(w992){
+        order: 3;
+        flex: auto;
+        margin-top: 1em;
+    }
+    .nav-item{
+        column-gap: 3em;
+        @include respond(w992){
+            justify-content: center;
+        }
+
+
+        li{
+            padding: 12px 0px 22px 0px;
+            border-bottom: 2px solid $white;
+            font-weight: 500;
+
+            &.active, &:hover{
+                color: $brand-color;
+                border-bottom: 2px solid $brand-color;
+                
+            }
+        }
+    }
+}
+
+
+.thmb-md{
+    width: 48px;
+    height: 48px;
+    background: #ccc;
+    border-radius: 50%;
+    margin-right: 1rem;
+    img {
+        border-radius: 50%;
+    }
+}
+
+
+.thmb-lg{
+    width: 72px;
+    height: 72px;
+    background: #ccc;
+    border-radius: 50%;
+    margin-right: 1rem;
+    img {
+        border-radius: 50%;
+    }
+}

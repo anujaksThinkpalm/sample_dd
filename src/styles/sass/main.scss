@@ -1,0 +1,352 @@
+@use "./base" as *;
+@use "./components" as *;
+
+.wrapper{
+    min-height: calc(100vh - 16em);
+}
+
+.side-menu-wrap{
+    background-color: $white;
+    position: fixed;
+    left: 0;
+    min-height: 100vh;
+    padding: 13em 0.8em 0.8em 0.8em;
+    font-size: 13px;
+    width: 100px;
+    top: 0;
+    z-index: -9;
+    
+    .scroll-area{
+        max-height: calc(100vh - 14em);
+        overflow-x: hidden;
+    }
+
+    .menu-item{
+        display: flex;
+        flex-direction: column;
+        gap: 2em;
+        text-align: center;
+
+        li{
+            cursor: pointer;
+            .icon{
+                width: 42px;
+                height: 42px;
+                border-radius: 50%;
+                background-color: $sky-white;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 0 auto 10px auto;
+                color: $menu-color;
+
+                span{
+                    font-size: 1.8em;
+                }
+                
+            }
+            &:hover, &.active{
+                .icon{
+                    background-color: $brand-color;
+                    color:$white;
+                }
+            }
+        }
+    }
+
+    @include respond(w1200){
+        display: none;
+    }
+}
+
+.content-wrap {
+    width: calc(100% - 110px);
+    margin-left: 110px;
+    @include respond(w1200){
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
+.left-content-wrap{
+    .tab-head{
+        .active{
+            border-bottom: 2px solid $brand-color;
+            font-weight: 500;
+        }
+    }
+}
+
+.right-content-wrap{
+
+    .sub-heading{
+        font-size: 18px;
+        font-weight: 600;
+        color:$head-black;
+    }
+    .tab-head{
+        cursor: pointer;
+        .active{
+            border-bottom: 2px solid $brand-color;
+            font-weight: 500;
+        }
+    }
+
+}
+.main-head {
+    font-size: 20px;
+    font-weight: 600;
+    color: $head-black;
+
+    .bubble{
+        margin-left: 1em;
+        background-color: $hover-color;
+        color: $white;
+        font-weight: normal;
+        font-size: 14px;
+        padding: 2px 14px;
+        border-radius: 2em;
+    }
+}
+
+.footer {
+    display: flex;
+    margin: 1em;
+    justify-content: end;
+    padding-bottom: 6em;
+    box-shadow: $shadow-light;
+}
+
+.v-list-lg{
+    padding: 2.8em 2em 1.6em 8.5em;
+    margin-top: 1em;
+    position: relative;
+    min-height: 8em;
+    color: $head-black;
+
+    h5{
+        font-weight: 500;
+        font-size: 1em;
+    }
+    .ship-thumb {
+        position: absolute;
+        left: 26px;
+        top: 38px;
+    }
+
+    .pro-indicators {
+        position: absolute;
+        right: 2em;
+        top: 1em;
+    }
+
+    .pin{
+        position: absolute;
+        top: 1em;
+        left: 1em;
+        color: $grey;
+        font-size: 1.2em;
+        
+        &.pinned{
+            color: $brand-color;
+        }
+    }
+    
+
+    
+    @include respond(w992){
+        .thmb-lg {
+            width: 60px;
+            height: 60px;
+        }
+        .respo-fix {
+            --bs-gutter-x: 1em;
+            margin-top: 1em;
+        }
+    }
+
+    &:hover{
+        border-bottom-color: $brand-color;
+    }
+    
+
+}
+
+@mixin  phase-ind{
+    width: 30px;
+    height: 20px;
+    font-weight: 500;
+    color: $white;
+    border-radius: 4px;
+    text-align:center;
+   
+    } 
+
+.phase-ind{
+    .plan{
+        @include phase-ind ();
+        background-color: $p-ind;
+    }
+
+    .specify{
+        @include phase-ind ();
+        background-color:$s-ind;
+    }
+
+    .tender{
+        @include phase-ind ();
+        background-color: $t-ind;
+    }
+
+    .repair{
+        @include phase-ind ();
+        background-color: $r-ind;
+    }
+
+    .close{
+        @include phase-ind ();
+        background-color: $c-ind;
+    }
+    
+}
+
+
+.priority-ind {
+    font-size: 0.9em;
+}
+
+.tab-items{
+    height: 2.5em;
+    cursor: pointer;
+    font-weight: 500;
+    &.active{
+        border-bottom: 2px solid $brand-color;
+        font-weight: 500;
+        color: $brand-color;
+    }
+        &:hover,&:active{
+            border-bottom: 2px solid $brand-color;
+            color: $brand-color;
+        }
+   
+}
+
+    .login-wrap {
+        background: url(../images/login-bg.jpg) no-repeat;
+        background-size: cover;
+        height: 100vh;
+        display: flex;
+        justify-content: end;
+        align-items: center;
+
+        .card.login-card {
+            padding: 3em;
+            margin: 6em;
+            flex: 0 0 32em;
+            border: 1px solid rgba(255, 255, 255, .25);
+            border-radius: 1em;
+            background-color: rgba(255, 255, 255, 0.85);
+            box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
+            backdrop-filter: blur(15px);
+        }
+    }
+.full-width{width: 100%;}
+
+
+.caption {
+    margin: 0em 8em 16em 8em;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+
+    h1{
+        font-size: 3em;
+        font-weight: 400;
+        margin-bottom: 1em;
+    }
+
+    h4{
+        font-size: 1em;
+        font-weight: 400;
+        
+    }
+}
+.spec-list {
+    &.side{
+        .collapse-head{
+            padding: 10px;
+            font-weight: 500;
+            background-color: $sky-blue;
+            border-radius: $md-radius;
+            color: $head-black;
+        }
+
+        .spec-item{
+            padding: 10px;
+            border-bottom: 1px solid $stroke; 
+
+            &:hover, &.active{
+                background-color: $sky-white;
+            }
+
+            &:last-child{
+                border-bottom: none;
+            }
+        }   
+
+    }
+}
+
+.scroll-area{
+    overflow-y: auto;
+}
+
+.flex-grow-1{
+    flex-grow: 1;
+}
+
+.bottom-ribbon {    
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+
+    .table-sm{
+        tr{
+            border-top: 1px soid $stroke;
+        }
+        th{
+            background-color: $sky-blue;
+            font-weight: 500;
+            color:$head-black;
+        }
+        th,td{
+            padding: 4px 6px;
+
+        }
+        border: 1px solid $stroke;
+        min-width: 30em;
+        text-align: left;
+
+    }
+
+    .chat-btn {
+        width: 100px;
+        border: 0;
+        background:$sky-blue;
+        font-size: 3em;
+        height: 1.8em;
+
+        span{
+            color: $brand-color;
+        }
+
+        &:hover, &:focus{
+            background: $brand-color;
+            outline: none;
+            span{
+                color: $white;
+            }
+           
+        }
+    }
+}

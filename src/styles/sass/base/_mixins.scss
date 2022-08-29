@@ -1,0 +1,56 @@
+
+@mixin respond($breakpoint){
+    @if $breakpoint == w576{
+        @media only screen and (max-width:36em){@content}
+    };
+
+    @if $breakpoint == w768{
+        @media only screen and (max-width:48em){@content}
+    };
+    
+    @if $breakpoint == w992{
+        @media only screen and (max-width:62em){@content}
+    };
+
+
+    @if $breakpoint == w1200{
+        @media only screen and (max-width:75em){@content}
+    };
+    @if $breakpoint == w1400{
+        @media only screen and (max-width:87.5em){@content}
+    }
+};
+
+
+/** @mixin respond($breakpoint){
+    @if $breakpoint == x-small{
+        @media only screen and (min-width:36em){@content}
+    };
+    @if $breakpoint == small{
+        @media only screen and (max-width:36em){@content}
+    };
+    
+    
+    @if $breakpoint == medium{
+        @media only screen and (max-width:48em){@content}
+    };
+
+    @if $breakpoint == large{
+        @media only screen and (max-width:62em){@content}
+    };
+
+    @if $breakpoint == x-large{
+        @media only screen and (max-width:75em){@content}
+    };
+
+    @if $breakpoint == xxl{
+        @media only screen and (max-width:87.5em){@content}
+    }
+};*/
+
+
+
+
+
+
+

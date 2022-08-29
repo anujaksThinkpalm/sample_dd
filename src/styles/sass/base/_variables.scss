@@ -1,0 +1,71 @@
+// Colors
+
+$black: #000;
+$brand-color: #2269D5;
+$hover-color:#007DF1;
+
+$red: #D1414B;
+$green: #36AC79;
+$orange: #faa200;
+
+$body-white: #D2D2D2;
+$sky-white: #EBF2FF;
+$sky-blue: #D5EAFD;
+$body-gray:#F2F6FA;
+
+$white: #fff;
+$grey: #e5e1e6;
+$stroke: #E8EFF5;
+$border-gray: #ccc;
+
+$head-black: #2E3451;
+$content-black: #626D8A;
+$menu-color:#75809E;
+
+
+//Indicator
+
+$p-ind: #D6CECE;
+$s-ind: #8BD0F8;
+$r-ind: #AE8BF8;
+$t-ind: #F8C68B;
+$c-ind: #51804D;
+
+label{
+    color: $content-black;
+ }
+
+.high{
+    color:$red;
+}
+
+.medium{
+    color:$orange;
+}
+
+.low{
+    color:$grey;
+}
+
+// Fonts
+
+$primary-font: 'Poppins', sans-serif;
+$secondary-font: 'Open Sans', sans-serif;
+
+// Abstracts
+
+$shadow-light: 0px 4px 10px rgba($black, .03);
+
+$sm-radius: 4px;
+$md-radius: 6px;
+$lg-radius: 8px;
+$xl-radius: 12px;
+
+$sm-height:1.625em;
+$md-height:2.25em;
+$lg-height:2.875em;
+$xl-height:3.45em;
+
+
+label{color: $content-black;}
+.value{color: $head-black;}

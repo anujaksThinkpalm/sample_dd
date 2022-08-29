@@ -1,0 +1,226 @@
+@use "../base" as *;
+
+::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: $white; 
+  }
+   
+  ::-webkit-scrollbar-thumb {
+    background: $content-black; 
+    border-radius: $lg-radius;
+  }
+  
+   ::-webkit-scrollbar-thumb:hover {
+    background: $head-black; 
+  }
+
+//---- mixins ---
+
+@mixin button {
+    font-size: 0.938em;
+    border-radius: $md-radius;
+    border: 0;
+    background: $brand-color;
+    color: $white;
+    padding: 1em;
+    font-weight: 500;
+    height: $md-height;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+
+    &:hover {}
+}
+
+@mixin size-addon {
+    &.small {
+        font-size: 0.8125em;
+        height: $sm-height;
+    }
+
+    &.large {
+        font-size: 0.875em;
+        height: $lg-height;
+    }
+
+    &.xlarge {
+        font-size: 1em;
+        height: $xl-height;
+    }
+}
+
+@mixin formbox {
+    border: 1px solid $stroke;
+    height: $md-height;
+    border-radius: $md-radius;
+    padding: 1em;
+}
+
+//---- Buttons ---
+//---- primary button ---
+
+.primary-btn {
+    @include button();
+    @include size-addon();
+    
+    &:hover,
+    &:active,
+    &:focus {
+        background-color: $hover-color;
+    }
+}
+
+//---- Secondary button ---
+
+.secondary-btn {
+    @include button();
+    color: $brand-color ;
+    background: $sky-blue;
+    border: none;
+
+    @include size-addon();
+
+    &.small {
+        background: $white;
+        color: $brand-color ;
+        border: 1px solid $brand-color ;
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+        color: $white ;
+        background: $brand-color;
+    }
+}
+
+//---- Round Corner button ---
+.rnd-btn {
+    @include button();
+    color: $brand-color ;
+    background: $white;
+    border: 1px solid $brand-color;
+    border-radius: 2rem;
+    min-width: 9em;
+
+    @include size-addon();
+
+    &:hover,
+    &:active,
+    &:focus {
+        background-color: $brand-color;
+        color: $white;
+        outline: none;
+    }
+}
+
+//---- Link button ---
+.link-btn {
+    font-weight: 500;
+    color: $brand-color;
+    border: none;
+    outline: none;
+
+    &:hover,
+    &:active,
+    &:focus {
+        color: $hover-color;
+        border: none;
+        outline: none;
+    }
+
+}
+
+//---- Line Hight Lighted button ---
+
+.lineBtn-set {
+    .link-btn {
+        border-bottom: 2px solid $white;
+        padding-bottom: 0.8em;
+        color: $border-gray;
+
+        &.active, &:hover,&:focus {
+            border-bottom-color: $brand-color;
+            color: $brand-color;
+        }
+    }
+}
+//---- circle icon button ---
+
+.circle-ico-btn{
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background-color: $sky-white;
+    color: $content-black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    outline: none;
+    span{
+        font-size: 2rem;
+    }
+
+    &:hover{
+        background-color: $brand-color;
+        color: $white;
+    }
+}
+
+//---- card ---
+.card {
+    box-shadow: $shadow-light;
+    background-color: $white;
+    border: 1px solid $stroke;
+    border-radius: $md-radius;
+}
+
+//---- Form Elements ---
+
+//---- Normal Text Box ---
+.text-box {
+    
+    @include formbox();
+    @include size-addon();
+
+
+    &:focus {
+        border-color: $brand-color;
+        box-shadow: 0 0 0 3px rgb(34 105 213 / 25%);
+        outline: none;
+    }
+}
+
+//---- Normal Text Box ---
+.search {
+    position: relative;
+
+    .icon-search {
+        position: absolute;
+        font-size: 1.4em;
+        top: 8px;
+        left: 10px;
+        color: $grey;
+    }
+
+    .text-box {
+        padding: 1em 1em 1em 3em;
+    }
+}
+
+//---- Select ---
+
+.select{
+    @include formbox();
+    @include size-addon();
+    
+    &.small{
+        padding: 0em;
+    }
+}

@@ -1,0 +1,331 @@
+@use './variables' as *;
+@use './mixins' as *;
+
+*,
+*::after,
+*::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
+
+
+}
+
+*{
+    transition: all 0.2s ease;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+html {
+    font-size: 62.5%;
+
+    @include respond(w1400) {
+        font-size: 60%;
+    }
+}
+
+body {
+    box-sizing: border-box;
+    background-color: $body-gray ;
+    font-family: $primary-font;
+    font-size: 14px;
+    color: $content-black;
+    
+}
+
+
+hr {
+    height: 0;
+    color: inherit;
+}
+
+b,
+strong {
+    font-weight: bolder;
+}
+
+sub,
+sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+sub {
+    bottom: -0.25em;
+}
+
+sup {
+    top: -0.5em;
+}
+
+
+table {
+    text-indent: 0;
+    border-color: inherit;
+    border-collapse: collapse;
+}
+
+
+button,
+input,
+optgroup,
+select,
+textarea {
+    font-family: inherit;
+    font-size: 100%;
+    line-height: 1.15;
+    margin: 0;
+}
+
+
+button,
+select {
+    text-transform: none;
+}
+
+
+
+button,
+[type='button'],
+[type='reset'],
+[type='submit'] {
+    -webkit-appearance: button;
+    cursor: pointer;
+}
+
+
+::-moz-focus-inner {
+    border-style: none;
+    padding: 0;
+}
+
+
+:-moz-focusring {
+    outline: 1px dotted ButtonText;
+}
+
+
+:-moz-ui-invalid {
+    box-shadow: none;
+}
+
+
+legend {
+    padding: 0;
+}
+
+
+progress {
+    vertical-align: baseline;
+}
+
+
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+    height: auto;
+}
+
+
+[type='search'] {
+    -webkit-appearance: textfield;
+    outline-offset: -2px;
+}
+
+::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+
+
+::-webkit-file-upload-button {
+    -webkit-appearance: button;
+    font: inherit;
+}
+
+
+blockquote,dl,dd,
+h1,h2,h3,h4,h5,h6,hr,figure,p,pre {
+    margin: 0;
+}
+
+button {
+    background-color: transparent;
+    background-image: none;
+}
+
+
+button:focus {
+    outline: 1px dotted;
+    outline: 5px auto -webkit-focus-ring-color;
+}
+
+fieldset {
+    margin: 0;
+    padding: 0;
+}
+
+ol,
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+hr {
+    border-top-width: 1px;
+  }
+  
+  textarea {
+    resize: vertical;
+  }
+  
+  input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+    opacity: 1;
+    color: #a1a1aa;
+  }
+  
+  input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+    opacity: 1;
+    color: #a1a1aa;
+  }
+  
+  input::placeholder,
+  textarea::placeholder {
+    opacity: 1;
+    color: #a1a1aa;
+  }
+  
+  
+  img,
+  svg,
+  video,
+  canvas,
+  audio,
+  iframe,
+  embed,
+  object {
+    display: block;
+    vertical-align: middle;
+  }
+
+
+  .relative{
+    position: relative;
+}
+
+.absolute{
+    position: absolute;
+}
+
+.font-8{
+    font-size: 0.5em;
+}
+
+.font-10{
+    font-size: 0.625em;
+}
+.font-12{
+    font-size: 0.75em;
+}
+.font-13{
+    font-size: 0.813em;
+}
+.font-14{
+    font-size: 0.875em;
+}
+
+.font-16{
+    font-size: 1em;
+}
+.font-18{
+    font-size: 1.125em;
+}
+.font-20{
+    font-size: 1.25em;
+}
+
+.font-22{
+    font-size: 1.375em;
+}
+
+.font-24{
+    font-size: 1.5em;
+}
+
+.font-semibold{
+    font-weight: 500;
+}
+
+.font-bold{
+    font-weight: 600;
+}
+.font-bolder{
+    font-weight: 800;
+}
+.font-black{
+    font-weight: 1000;
+}
+
+.complete{color: $green;}
+
+.inprogress{color: $brand-color;}
+
+.border{
+    border: 1px solid $stroke;
+}
+
+.border-up{
+    border-top: 1px solid $stroke;
+}
+
+.border-down{
+    border-bottom: 1px solid $stroke;
+}
+
+.border-left{
+    border-left: 1px solid $stroke;
+}
+
+.border-right{
+    border-right: 1px solid $stroke;
+}
+
+//------Border-radius----
+.sm-radius{
+    border-radius:$sm-radius ;
+}
+.md-radius{
+    border-radius:$md-radius ;
+}
+.lg-radius{
+    border-radius:$lg-radius ;
+}
+.xl-radius{
+    border-radius:$xl-radius ;
+}
+
+//------ Margin ------
+
+.ml-auto{margin-left: auto;}
+
+.mr-auto{margin-right: auto;}
+
+//------ Column Gap ------
+
+.col-gap-1{column-gap: 1em;}
+.col-gap-2{column-gap: 2em;}
+.col-gap-3{column-gap: 3em;}
+.col-gap-4{column-gap: 4em;}
+.col-gap-5{column-gap: 5em;}
+.col-gap-6{column-gap: 6em;}
