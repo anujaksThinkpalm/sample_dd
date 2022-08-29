@@ -1,7 +1,7 @@
-import React from "react";
-import AdminHeader from "./AdminHeader";
+import React from 'react';
+import AdminHeader from './AdminHeader';
 
-const LandingPage = (props) => {
+const LandingPage = () => {
   return (
     <div>
       <AdminHeader />
