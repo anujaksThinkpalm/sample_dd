@@ -1,5 +1,5 @@
-import React from "react";
-import brandLogo from '../images/brand-logo.png'
+import React from 'react';
+import brandLogo from '../images/brand-logo.png';
 
 const login = () => {
   return (
@@ -18,7 +18,7 @@ const login = () => {
         </div>
         <div className="card login-card">
           <div className="brand-logo mb-5">
-            <a href="">
+            <a href="#">
               <img src={brandLogo} alt="" className="" />
             </a>
           </div>
@@ -29,29 +29,31 @@ const login = () => {
           </p>
 
           <div className="mb-5 d-flex flex-column">
-            <label for="" className="mb-1">
+            <label htmlFor="" className="mb-1">
               Username
             </label>
             <input type="text" className="text-box xlarge" />
           </div>
 
           <div className="mb-5 d-flex flex-column">
-            <label for="" className="mb-1">
+            <label htmlFor="" className="mb-1">
               Password
             </label>
             <input type="password" className="text-box xlarge" />
           </div>
 
           <div className="d-flex justify-content-end">
-            Forgot your{" "}
-            <a href="" className="link-btn">
-              {" "}
+            Forgot your
+            {' '}
+            <a href="#" className="link-btn">
+              {' '}
               password?
             </a>
           </div>
           <button
             className="primary-btn xlarge full-width my-3"
-            onclick="location.href='projects.html'"
+            onClick="location.href='projects.html'"
+            type="button"
           >
             Login
           </button>
