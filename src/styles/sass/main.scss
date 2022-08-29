@@ -112,7 +112,7 @@
 .footer {
     display: flex;
     margin: 1em;
-    justify-content: end;
+    justify-content: flex-end;
     padding-bottom: 6em;
     box-shadow: $shadow-light;
 }
@@ -236,7 +236,7 @@
         background-size: cover;
         height: 100vh;
         display: flex;
-        justify-content: end;
+        justify-content: flex-end;
         align-items: center;
 
         .card.login-card {
